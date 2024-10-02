@@ -19,6 +19,7 @@ int main(){
 
     for(int i=0; i<4; ++i)
     {
+        //this line has a error\/
         classRoster.add(classRoster.breakArray(studentData[i]));
     }
     classRoster.printAll();
