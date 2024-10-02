@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-//constructor
+//constructors
 Student::Student(string id, string fname, string lname, string email,
 int age, int dayarray, DegreePrograms degreepln){
     this->Id = id;
@@ -13,9 +13,10 @@ int age, int dayarray, DegreePrograms degreepln){
     this->Email = email;
     this->Age = age;
     for (int i = 0; i < 2; ++i) {
+    //this line has a error\/
 	this->DayArray[i] = dayarray[i];
-    this->Degree = degreepln;
     }
+    this->Degree = degreepln;
 }
 Student::Student() {
 	this->Id = "";

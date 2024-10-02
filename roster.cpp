@@ -11,6 +11,7 @@ void Roster::add(string studentID, string firstName, string lastName,
             int daysInCourse3, DegreePrograms degreeProgram)
             {
                 int DayArray[] ={daysInCourse1, daysInCourse2, daysInCourse3};
+                //this line has a error\/
                 ClassRosterArray[++count] = new Student(studentID, firstName, lastName, emailAddress, age, DayArray, degreeProgram);   
             }
 
