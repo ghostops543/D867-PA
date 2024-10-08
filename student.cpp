@@ -1,114 +1,131 @@
-#include "degree.h"
+//#include "degree.h"
 #include "student.h"
-#include "roster.h"
+//#include "roster.h"
 #include <iostream>
 #include <string>
 using namespace std;
 //constructors
 Student::Student(string id, string fname, string lname, string email,
-int age, int dayarray, DegreePrograms degreepln){
-    this->Id = id;
-    this->FName = fname;
-    this->LName = lname;
-    this->Email = email;
-    this->Age = age;
-    for (int i = 0; i < 2; ++i) {
-    //this line has a error\/
-	this->DayArray[i] = dayarray[i];
-    }
+int age, int dayarray[], DegreePrograms degreepln){
+    this->id = id;
+    this->fname = fname;
+    this->lname = lname;
+    this->email = email;
+    this->age = age;
+    this->dayarray[0] = dayarray[0];
+    this->dayarray[1] = dayarray[1];
+    this->dayarray[2] = dayarray[2];
     this->Degree = degreepln;
 }
 Student::Student() {
-	this->Id = "";
-	this->FName = "";
-	this->LName = "";
-	this->Email = "";
-	this->Age = 0;
-	for (int i = 0; i < 2; ++i) {
-		this->DayArray[i] = 0;
+	this->id = "";
+	this->fname = "";
+	this->lname = "";
+	this->email = "";
+	this->age = 0;
+	for (int i = 0; i < 3; ++i) {
+		this->dayarray[i] = 0;
 	}
-	this->Degree = SOFTWARE;
+	this->Degree = NONE;
+    return;
 }
 
 //acceseors
-string Student::GetId() {
-        return Id;
+string Student::GetId(){
+    return id;
 }
 
 string Student::GetFName(){
-    return FName;
+    return fname;
 }
 
 string Student::GetLName(){
-    return LName;
+    return lname;
 }
 
 string Student::GetEmail(){
-    return Email;
+    return email;
 }
 
 int Student::GetAge(){
-    return Age;
+    return age;
 }
 
 int* Student::GetDayArray(){
-    return this->DayArray;
+    return this->dayarray;
 }
 
 DegreePrograms Student::GetDegree(){
-    return Degree;
+    return this->Degree;
 }
 //mutators
 void Student::SetId(string id){
-    Id = id;
+    this->id = id;
+    return;
 }
 void Student::SetFName(string fname){
-    FName = fname;
+    this->fname = fname;
+    return;
 }
 void Student::setLName(string lname){
-    LName = lname;
+    this->lname = lname;
+    return;
 }
 void Student::SetEmail(string email){
-    Email = email;
+    this->email = email;
+    return;
 }
 void Student::SetAge(int age){
-    Age = age;
+    this->age = age;
+    return;
 }
-void Student::SetDayArray(int dayarray[]){
-    DayArray[0,1,2] = dayarray[0,1,2];
+void Student::SetDayArray(int day1,int day2,int day3){
+    this->dayarray[0] = day1;
+    this->dayarray[1] = day2;
+    this->dayarray[2] = day3;
+    return;
 }
 void Student::SetDegree(DegreePrograms degreepln){
-    Degree = degreepln;
+    this->Degree = degreepln;
+    return;
 }
 
-std::string Student::PrintId(){
-    cout<<Id<<endl;
-    
+void Student::PrintId(){
+    cout<<id<<endl;
+    return;
 }
-string Student::PrintFName(){
-    cout<<FName<<endl;
+void Student::PrintFName(){
+    cout<<fname<<endl;
+    return;
 }
-string Student::PrintLName(){
-    cout<<LName<<endl;
+void Student::PrintLName(){
+    cout<<lname<<endl;
+    return;
 }
-string Student::PrintEmail(){
-    cout<<Email<<endl;
+void Student::PrintEmail(){
+    cout<<email<<endl;
+    return;
 }
-string Student::PrintAge(){
-    cout<<Age<<endl;
+void Student::PrintAge(){
+    cout<<age<<endl;
+    return;
 }
-string Student::PrintDayArray(){
-    cout<<DayArray<<endl;
+void Student::PrintDayArray(){
+    cout<<dayarray<<endl;
+    return;
 }
-string Student::PrintDegree(){
+void Student::PrintDegree(){
     cout<<Degree<<endl;
+    return;
 }
-string Student::printAll(){
-    cout<<"ID: "<<Id<<endl;
-    cout<<"FName: "<<FName<<endl;
-    cout<<"LName: "<<LName<<endl;
-    cout<<"Email: "<<Email<<endl;
-    cout<<"Age: "<<Age<<endl;
-    cout<<"days in course: "<<DayArray<<endl;
-    cout<<"Degree: "<<Degree<<endl;
+void Student::print(){
+    cout<<"ID: "<<GetId()<<endl;
+    cout<<"FName: "<<GetFName()<<endl;
+    cout<<"LName: "<<GetLName()<<endl;
+    cout<<"Email: "<<GetEmail()<<endl;
+    cout<<"Age: "<<GetAge()<<endl;
+    cout<<"days in course: "<<GetDayArray()[0]<<", "<<GetDayArray()[1]<<", "<<GetDayArray()[2]<<endl;
+    cout<<"Degree: "<<degreedict[GetDegree()]<<endl;
+    cout<<endl;
+    return;
 }

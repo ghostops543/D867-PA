@@ -1,6 +1,8 @@
 #include <string>
-#include "degree.h"
+#include "student.h"
 #include <iostream>
+#ifndef roster_h
+#define roster_h
 using namespace std;
 
 class Roster{
@@ -11,12 +13,16 @@ class Roster{
         void remove(string studentID);
         void printAll();
         void printAverageDaysInCourse(string studentID);
+        Roster(int size);
+        string GetID(int i);
         void printInvalidEmails();
         void printByDegreeProgram(DegreePrograms degreeProgram);
-        string breakArray(string student);
-        string parse(string studentData[]);
+        void breakArray(const string studentData);
         Student* ClassRosterArray[5];
+        ~Roster();
+        int size;
     private:
         int count = -1;
     
 };
+#endif

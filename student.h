@@ -1,7 +1,9 @@
 #include <iostream>
 #include <string>
 #include "degree.h"
-#include "roster.h"
+#ifndef student_h
+#define student_h
+//#include "roster.h"
 using namespace std;
 
 class Student{
@@ -22,29 +24,30 @@ class Student{
             void setLName(string lname);
             void SetEmail(string email);
             void SetAge(int age);
-            void SetDayArray(int dayarray);
+            void SetDayArray(int day1, int day2, int day3);
             void SetDegree(DegreePrograms degreepln);
 
             Student();
-            Student(string id, string fname, string lname, string email, int age, int dayarray, DegreePrograms degreepln);
+            Student(string id, string fname, string lname, string email, int age, int dayarray[], DegreePrograms degreepln);
 
-            string PrintId();
-            string PrintFName();
-            string PrintLName();
-            string PrintEmail();
-            string PrintAge();
-            string PrintDayArray();
-            string PrintDegree();
-            string printAll();
+            void PrintId();
+            void PrintFName();
+            void PrintLName();
+            void PrintEmail();
+            void PrintAge();
+            void PrintDayArray();
+            void PrintDegree();
+            void print();
 
     private:
-            string Id;
-            string FName;
-            string LName;
-            string Email;
-            int Age;
-            int* DayArray;
+            string id;
+            string fname;
+            string lname;
+            string email;
+            int age;
+            int dayarray[3];
             DegreePrograms Degree;
 
 
 };
+#endif
